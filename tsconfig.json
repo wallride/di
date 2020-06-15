@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    // Import non-ES modules as default imports.
+    "esModuleInterop": true,
+    // use typescript to transpile jsx to js
+    "baseUrl": "./src",
+    "rootDir": "./src",
+    "resolveJsonModule": true,
+    "lib": [
+      "esnext"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "removeComments": false,
+    "target":"es6",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "declarationMap": true,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "sourceMap": false,
+    "declaration": true,
+    "charset": "utf-8",
+    "outDir": "./build",
+    "importHelpers": true
+  },
+  "exclude": ["node_modules", "./build", "./tests"]
+}

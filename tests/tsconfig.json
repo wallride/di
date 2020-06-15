@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "preserveConstEnums": true,
+    "target":"ES6",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "project":"*.ts",
+    "noEmitHelpers": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "removeComments": false,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "declaration": false,
+    "rootDir": "./src",
+    "importHelpers": true,
+    "typeRoots": ["../node_modules/@types"],
+    "outDir": "./build",
+    "lib": ["esnext"]
+  },
+  "exclude": ["node_modules", "build"]
+}

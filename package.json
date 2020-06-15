@@ -1,0 +1,41 @@
+{
+  "name": "wallride-di",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ivan Pesochenko",
+    "email": "i.wallride@gmail.com"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:wallride/di.git"
+  },
+  "scripts": {
+    "build": "rm -rf ./build && gulp",
+    "pretest": "cd tests && rm -rf ./build && gulp && cd ../",
+    "test": "mocha tests/build/index"
+  },
+  "typings": "./build/module.d.ts",
+  "typescript": {
+    "definition": "./build/module.d.ts"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.1.13",
+    "tslib": "^2.0.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^14.0.13",
+    "dts-bundle": "^0.7.3",
+    "chai": "^4.2.0",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "merge2": "^1.4.1",
+    "mocha": "^8.0.1",
+    "typescript": "^3.9.5"
+  }
+}
