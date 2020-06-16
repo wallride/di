@@ -1,27 +1,22 @@
 import {IInjectable} from "./Injectable";
 import {
-    InjectablePropertiesProvider,
-    IPropertyOptions
-} from "./providers/InjectablePropertiesProvider";
-
-export {IPropertyOptions}
+    InjectableRequiredPropertiesProvider,
+} from "./providers/InjectableRequiredPropertiesProvider";
 
 /**
  * Property decorator in IInjectable classes
  *
  * Usage:
  * class Dependency implements IInjectable {
- *     @property() key: Buffer;
- *     @property({optional: true}) optionalKey?: Buffer;
+ *     @required mandatoryProperty: any;
+ *     optionalProperty?: any;
  *     ...
  * }
  *
  */
-export function property<
+export function required<
     Class extends IInjectable,
     Property extends PropertyKey
->(options: IPropertyOptions = {}) {
-    return (target: Class, property: Property) => {
-        InjectablePropertiesProvider.set(target.constructor, property, options);
-    }
+>(target: Class, property: Property) {
+    InjectableRequiredPropertiesProvider.add(target.constructor, property);
 }

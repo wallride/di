@@ -1,20 +1,19 @@
 import {expect} from 'chai'
 import {di} from "../lib";
-import property = di.property;
 
 describe('Injectable', ()=>{
 
     class Injectable implements di.IInjectable {
-        @property() string: string;
-        @property() buffer: Buffer;
-        @property({optional: true}) number?: number;
-        @property({optional: true}) boolean?: boolean;
+        @di.required string: string;
+        @di.required buffer: Buffer;
+        number?: number;
+        boolean?: boolean;
 
         validate(): di.InjectableValidationReportType {return di.injectable.validate(this);}
     }
 
     class ExtendedInjectable extends Injectable{
-        @property() extended: number;
+        @di.required extended: number;
     }
 
     describe('Simple cases', ()=>{

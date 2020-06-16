@@ -14,8 +14,7 @@ export function Dependable<Dependency extends IInjectable, Class extends {new(..
     const getter = function() {
         if (dependency === undefined) throw new Error('No dependency object');
         const validation = dependency.validate();
-        if (validation !== true) throw new Error(`Dependency validation error at class ${target.constructor.name}.
-Invalid properties: \n${validation.map(prop => ` - ${prop.name.toString()} (defined in ${prop.injectableClass.name})`).join('\n')}`);
+        if (validation !== true) throw new Error(`Dependency ${dependency.constructor.name} validation error at class ${target.name}. \nMissing properties: \n${validation.map(prop => ` - ${prop.name.toString()} (defined in ${prop.definedIn.name})`).join('\n')}`);
 
         return dependency;
     };

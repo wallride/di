@@ -1,8 +1,8 @@
 import {IInjectable} from "../Injectable";
 
-export type InjectableSetOptionsType<I> = {[key in keyof I]?: I[key] extends Function ? never : I[key]};
+export type InjectableSetPropertiesType<I extends IInjectable> = {[key in keyof I]?: I[key] extends Function ? never : key extends 'validate' ? never : I[key]};
 
-export function setProperties<I extends IInjectable>(injectable: I, properties: InjectableSetOptionsType<I>): I {
+export function setProperties<I extends IInjectable>(injectable: I, properties: InjectableSetPropertiesType<I>): I {
     for (const key in properties) {
         const value = properties[key];
 

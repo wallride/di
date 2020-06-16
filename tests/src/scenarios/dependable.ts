@@ -4,14 +4,14 @@ import {di} from "../lib";
 describe('Dependable', ()=>{
 
     class Dependency implements di.IInjectable {
-        @di.property() foo: string;
-        @di.property({optional: true}) bar?: string;
+        @di.required foo: string;
+        bar?: string;
 
         validate(): di.InjectableValidationReportType {return di.injectable.validate(this);}
     }
 
     class ExtendedDependency extends Dependency{
-        @di.property() baz: string;
+        @di.required baz: string;
     }
 
     @di.Dependable
